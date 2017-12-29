@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <img src="../assets/logo.png">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
@@ -17,15 +18,30 @@
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
+    <div class="ope">
+      <mt-button type="primary" @click="btnClickTest" size="small">服务连接测试</mt-button>
+      <mt-button type="primary" @click="btnClickGo" size="small">前往项目</mt-button>
+    </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'HelloWorld',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  methods: {
+    btnClickTest () {
+      axios.get('/api/test').then((data) => {
+        alert(JSON.stringify(data.data))
+      })
+    },
+    btnClickGo () {
+      this.$router.push('/home')
     }
   }
 }
@@ -46,5 +62,17 @@ li {
 }
 a {
   color: #42b983;
+}
+.hello {
+  margin-top: 20px;
+}
+.ope {
+  margin: 30px auto 0;
+  border: 1px solid cadetblue;
+  padding: 10px;
+  width: 85%;
+  border-radius: 10px;
+  border-radius: 10px;
+  background-color: papayawhip;
 }
 </style>

@@ -5,7 +5,7 @@
 ## Init
 
 ### run the server
-in `/server` folder：
+in `/server` folder：  
 `node index.js`
 
 ### run the webapp

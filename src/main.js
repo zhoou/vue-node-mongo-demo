@@ -4,7 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
-import '@/assets/libs/bootstrap_3.3.7_dist/css/bootstrap.min.css'
+import '@/assets/css/style.css'
+import 'mint-ui/lib/style.css'
+
+import { Header, Button } from 'mint-ui'
+Vue.component(Header.name, Header)
+Vue.component(Button.name, Button)
 
 Vue.config.productionTip = false
 
